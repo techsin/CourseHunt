@@ -1,0 +1,110 @@
+* {
+  margin: 0; padding: 0;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  overflow: auto;
+  background-color: #fff;
+  background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/handmadepaper.png);
+}
+header {
+  padding: 10px;
+  background-color: red;
+  overflow: auto;
+}
+
+.logo {
+  padding: 12px;
+  margin: 5px;
+  background-color: orange;
+  color: #fff;
+  border-radius: 5px;
+}
+nav, .logo {
+  float: left;
+}
+
+nav li {
+  float: left;
+  list-style-type: none;
+  margin: 8px;
+}
+
+nav li a {
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Slabo 27px', serif;
+}
+nav li a:hover {
+  background-color: rgba(0,0,0,.4);
+}
+nav li a:active {
+  background-color: #fff;
+  color: #000;
+}
+.cont {
+  padding: 15px;
+  min-width: 800px;
+  max-width: 1200px;
+  margin: auto;
+
+}
+
+.cont .inner {
+  min-height: 300px;
+  margin: 25px;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.lists {
+  margin-top: 30px;
+  overflow: auto;
+}
+
+.lists .list {
+  float: left;
+  height: 200px;
+  background-color: #f3f3f3;
+  width: 33%;
+  max-width: 363px;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+}
+
+
+
+.list {
+  text-align: center;
+}
+
+.list .title {
+  margin-top: 70px;
+}
+
+.cat_list {
+  margin-top: 30px;
+}
+.category ul {
+  overflow: auto;
+  width: 100%;
+}
+.category li {
+  float: left;
+  width: 33%;
+  list-style-type: none;
+}
+.category li a {
+  display: block;
+  height: 200px;
+  box-sizing: border-box;
+  border:1px solid #fff;
+  background-color: #eee;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  padding-top: 80px;
+}

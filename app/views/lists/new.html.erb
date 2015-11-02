@@ -1,0 +1,8 @@
+<h1>Lists</h1>
+
+
+<%= form_for(:lists, url: create_list_path) do |f| %> 
+  <%= f.text_field :title, :placeholder => "title" %> 
+  <%= f.select("category_id", Category.all.collect {|p| [ p.tag, p.id ] }, { include_blank: true }) %>
+  <%= f.submit "Make a list", class: "btn-submit" %>
+<% end %>

@@ -1,0 +1,47 @@
+<link rel="stylesheet" type="text/css" href="/category.css">
+
+<style>
+	.pagin {
+		text-align: center;
+	}
+</style>
+
+
+<div class='container'> 
+	<div class='inner'> 
+		<div class='about_cat text-center'> 
+
+			<h1><%= @category.tag %></h1>
+			<p>Lists in this category</p>
+
+		</div>	
+
+		<ul class='alists'>
+			<% pg = params[:pg] %>
+			<% if pg.nil? %>
+				<% pg = 0 %>
+			<% else %>
+				<% pg = pg.to_i %>
+			<% end %>
+
+			<% List.where('category_id = ?', @category.id).all.sort_by { |x| x.list_votes }.reverse.slice(pg,10).each do |list| %>
+				<li>
+					<%= link_to("/list/#{list.id}", class: 'alist') do %>
+						<span class='votes'> <%= list.list_votes.count %> </span> <%= list.title %>
+					<% end %>
+
+				</li>
+			<% end %>
+		</ul>
+	</div>
+	<div class="pagin">
+		<ul class="pagination pagination-danger"> 
+			  <% n = (List.where('category_id = ?', @category.id).count/10.0).ceil %>
+			  <% n = 1 if n<1 %>
+			  <% n.times do |x| %>
+		          <li><a class="<%= 'active' if pg == x %>" href="/category/<%= @category.tag %>/<%=x%>/"><%= x %></a></li>
+	          <% end %> 
+	    </ul>
+	</div>
+
+</div>

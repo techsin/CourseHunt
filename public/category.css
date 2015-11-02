@@ -1,0 +1,25 @@
+
+.alists {
+  margin: 30px;
+}
+.alists li {
+  margin: 10px;
+  list-style-type: none;
+}
+.alist {
+  padding: 15px;
+  background-color: #eee;
+  display: block;
+  text-decoration: none;
+  color:#000;
+}
+
+.votes {
+  padding: 5px 10px;
+  background-color: #fff;
+  text-align: center;
+  display: inline-block;
+  border-radius: 100px;
+  margin-right: 20px;
+
+}

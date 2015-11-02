@@ -1,0 +1,23 @@
+<style>
+	input{
+		display: block;
+		margin: 10px;
+		padding: 10px;
+	}
+	.center-block {
+		float: none;
+	}
+</style>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 center-block">
+		<h1>Login</h1>
+		<%= form_for(:session, url: login_path) do |f| %> 
+		  <%= f.email_field :email, :placeholder => "Email" %> 
+		  <%= f.password_field :password, :placeholder => "Password" %> 
+		  <%= f.submit "Log in", class: "btn-submit" %>
+		<% end %>	
+		</div>
+	</div>
+</div>

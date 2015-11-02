@@ -1,0 +1,31 @@
+
+
+
+
+<style>
+	input{
+		display: block;
+		margin: 10px;
+		padding: 10px;
+	}
+	.center-block {
+		float: none;
+	}
+</style>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 center-block">
+		<h1> Sing Up </h1>
+			<%= form_for @user do |f| %>
+			  Name: <%= f.text_field :name %><br />
+			  Email: <%= f.email_field( "email") %><br />
+			  Password: <%= f.password_field :password %><br />
+			  Confirm Password: <%= f.password_field :confirm_password %><br /><br />
+
+
+			  <%= f.submit %>
+			<% end %>
+		</div>
+	</div>
+</div>
