@@ -15,7 +15,6 @@
         <td> <%= category.tag %> </td>
         <td>
           <ul> 
-            <% binding.pry %>
             <% category.lists do |list| %>
             <li> <%= link_to 'Show', list %></li>
             <% end %>

@@ -1,3 +1,30 @@
+<style>
+	.form_select {
+		padding: 70px 50px;
+		background-color: #ddd;
+		width: 700px;
+		margin: auto;
+		margin-top: 100px;
+	}
+
+	.form_select a {
+		padding: 20px;
+		background-color: #fff;
+		display: block;
+	}
+	.form_select p {
+		margin-bottom: 80px;
+	}
+	.form_select p:last-of-type {
+		margin: 0;
+	}
+
+	.form_select a:hover {
+		background-color: #FF8F5E;
+		color: #fff;
+	}
+</style>
+
 <div class="form_select">
   <p> <%= link_to "Submit a New Item", new_item_path %> </p>
   <p> <%= link_to "Submit a New List", new_list_path %> </p>

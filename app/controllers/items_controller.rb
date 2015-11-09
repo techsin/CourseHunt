@@ -27,7 +27,6 @@ class ItemsController < ApplicationController
   def create
 
     link =  /^(?:https?:\/\/)?(?:www\.)?(.+)/.match(params[:link])[1]
-    binding.pry
     item_data = {
       title: params[:title],
       description: params[:description],
@@ -39,7 +38,6 @@ class ItemsController < ApplicationController
     
     @item.user = current_user
     @item.list = @list
-    binding.pry
     respond_to do |format|
       if @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
