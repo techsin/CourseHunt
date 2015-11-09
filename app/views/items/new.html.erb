@@ -1,0 +1,21 @@
+<h1>New Item</h1>
+
+<%= form_tag('/items') do |f|%>
+  <div class="field_form">
+    <%= label_tag :title %>
+    <%= text_field_tag :title %>
+  </div>
+  <div class="field_form">
+    <%= label_tag :description  %>
+    <%= text_area_tag :description %>
+  </div>
+   <div class="field_form">
+    <%= label_tag :link  %>
+    <%= text_field_tag :link %>
+  </div>
+  <div class="field_form">
+    <%= label_tag :list %>
+    <%= select_tag :list, options_for_select(List.all.collect {|l| [l.title, l.id]}), {prompt: "Select"} %>
+  </div>
+  <%= submit_tag "Save Item" %>
+<% end %>
