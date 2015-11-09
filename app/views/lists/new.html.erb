@@ -1,8 +1,14 @@
 <h1>Lists</h1>
 
 
-<%= form_for(:lists, url: create_list_path) do |f| %> 
-  <%= f.text_field :title, :placeholder => "title" %> 
-  <%= f.select("category_id", Category.all.collect {|p| [ p.tag, p.id ] }, { include_blank: true }) %>
-  <%= f.submit "Make a list", class: "btn-submit" %>
+<%= form_tag('/lists') do %>
+  <div class="form_field">
+    <%= label_tag :title %> 
+    <%= text_field_tag :title%> 
+  </div>
+  <div class="form_field">
+    <%= label_tag :category %>
+    <%= select_tag(:category, options_for_select(Category.all.collect {|p| [ p.tag, p.id ] }), { include_blank: true }) %>
+  </div>
+  <%= submit_tag "Make a list", class: "btn-submit" %>
 <% end %>

@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20151027005858) do
     t.text     "description"
     t.string   "link"
     t.integer  "user_id"
+    t.integer  "list_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

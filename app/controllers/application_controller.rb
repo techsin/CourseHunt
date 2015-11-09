@@ -8,7 +8,17 @@ class ApplicationController < ActionController::Base
 	def current_user 
 	  @current_user ||= User.find(session[:user_id]) if session[:user_id] 
 	end
+  
 	def require_user 
 	  redirect_to '/login' unless current_user 
 	end
+
+  def require_author(current_record)
+    author = current_record.user
+    redirect_to '/login' unless current_user == author
+  end
+
+  def store_return_page
+    session[:return_page] = request.url
+  end
 end

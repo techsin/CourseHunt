@@ -67,7 +67,7 @@
 
 </style>
 
-<div class="container white_cont">
+<div class="container white_cont" id="trending">
   <div class="row">
     <h2>Trending Lists</h2>
     <div class="nav-tabs-navigation">
@@ -83,12 +83,14 @@
       <div class="tab-pane active" id="home">
           <div class="row">
               <% List.all.sort_by { |list| list.list_votes }[0,6].each do |list| %>
-               <div class="col-md-4 item">
-                  <div class="centered">
-                    <h4 class="title"> <%= list.title %> </h4>
-                    <div class="likes"> <%= list.list_votes.count %> </div>
-                  </div>
-               </div>
+              <a href="/lists/<%= list.id%>">
+                 <div class="col-md-4 item">
+                    <div class="centered">
+                      <h4 class="title"> <%= list.title %> </h4>
+                      <div class="likes"> <%= list.list_votes.count %> </div>
+                    </div>
+                 </div>
+              </a>
               <% end %>
           </div>
       </div>
@@ -113,7 +115,7 @@
     <h2>Browse By Categories</h2>
     <div class="row categories">
       <% Category.all.each do |c| %>
-        <a class='col-md-3 item center-block'href="category/<%= c.tag %>"><%= c.tag %></a>
+        <a class='col-md-3 item center-block'href="categories/<%= c.tag %>"><%= c.tag %></a>
       <% end %>
 
     </div>
@@ -169,7 +171,7 @@
       <span>Browse By Category</span>
       <ul class='cat_list'>
   	<% Category.all.each do |c| %>
-  		<li><a href="category/<%= c.tag %>"><%= c.tag %></a></li>
+  		<li><a href="categories/<%= c.tag %>"><%= c.tag %></a></li>
   	<% end %>
       </ul>
     </div>

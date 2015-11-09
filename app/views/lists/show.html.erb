@@ -1,2 +1,8 @@
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
+<% @lists.items.each do |item| %>
+  <div> 
+    <h3> <%= item.title %> </h3>
+    <strong>Author: <%= item.user.name unless item.user.nil? %> </strong>
+    <p> <a href="<%= item.link %>"> <%= item.link  %></a> </p>
+    <p> <%= item.description %></p>
+  </div>
+<% end %>

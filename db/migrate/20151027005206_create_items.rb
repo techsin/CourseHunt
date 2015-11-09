@@ -5,6 +5,8 @@ class CreateItems < ActiveRecord::Migration
       t.text :description
       t.string :link
       t.belongs_to :user
+      t.belongs_to :list
+      
       t.timestamps null: false
     end
   end

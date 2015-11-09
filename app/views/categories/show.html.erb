@@ -26,7 +26,7 @@
 
 			<% List.where('category_id = ?', @category.id).all.sort_by { |x| x.list_votes }.reverse.slice(pg,10).each do |list| %>
 				<li>
-					<%= link_to("/list/#{list.id}", class: 'alist') do %>
+					<%= link_to("/lists/#{list.id}", class: 'alist') do %>
 						<span class='votes'> <%= list.list_votes.count %> </span> <%= list.title %>
 					<% end %>
 

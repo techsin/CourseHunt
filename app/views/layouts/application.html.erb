@@ -59,8 +59,9 @@
                     <div class="collapse navbar-collapse" id="navigation-example-2">
                     <ul class="nav navbar-nav">
                         <%= link_to("Home", root_path, class: "btn btn-danger btn-simple") %>
+                        <a href="/#trending" class="btn btn-danger btn-simple">Trending Lists</a>
                         <a href="/#category" class="btn btn-danger btn-simple">Categories</a>
-                        <a href="#" class="btn btn-danger btn-fill">Submit</a>
+                        <a href=<%= submit_new_path%> class="btn btn-danger btn-fill">Submit</a>
                       </ul>
                       <ul class="nav navbar-nav navbar-right">
                          <% if current_user %> 

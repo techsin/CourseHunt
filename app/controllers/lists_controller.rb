@@ -1,20 +1,27 @@
 class ListsController < ApplicationController
+
   def new
   	@list = List.new
   end
 
+  def edit
+  end
+  
   def create
-  	data =  params[:lists]
+   binding.pry
+	  @list = List.new(title: params[:title])
 
-	  @list = List.new(list_params)
+    @list.category = Category.find(params[:category])
+
 	  @list.user = current_user
 	  if @list.save 
+      binding.pry
 	    redirect_to '/'  
 	  end 
   end
 
   def show
-  	
+  	@lists = List.find(params[:id])
   end
 
   private
@@ -22,5 +29,7 @@ class ListsController < ApplicationController
 	def list_params
 	    params.require(:lists).permit(:title, :category_id)
 	end
+
+  
 
 end

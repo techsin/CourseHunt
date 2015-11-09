@@ -1,20 +1,18 @@
 Rails.application.routes.draw do
 
-  get 'category/:category/(:pg)' => "categories#show"
+  get 'categories/:category/(:pg)' => "categories#show"
 
-  get 'lists/new'
-
-  post 'create_list' => 'lists#create'
-
-  get 'lists/:id' => 'lists#show'
-
-  require 'pry'
   root 'home#welcome'
   post 'login' => 'sessions#create'
   get 'login'  => 'sessions#new' 
   get 'signup'  => 'users#new' 
   delete 'logout' => 'sessions#destroy'
   resources :users
+  resources :lists
+  resources :items
+
+  
+  get 'submit' => 'home#submit', as: 'submit_new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

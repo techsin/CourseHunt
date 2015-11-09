@@ -16,12 +16,12 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-4 center-block">
-		<h1> Sing Up </h1>
+		<h1> Sign Up </h1>
 			<%= form_for @user do |f| %>
-			  Name: <%= f.text_field :name %><br />
-			  Email: <%= f.email_field( "email") %><br />
-			  Password: <%= f.password_field :password %><br />
-			  Confirm Password: <%= f.password_field :confirm_password %><br /><br />
+			  Name: <%= f.text_field :name, required: true %><br />
+			  Email: <%= f.email_field :email, required: true %><br />
+			  Password: <%= f.password_field :password, required: true %><br />
+			  Confirm Password: <%= f.password_field :confirm_password, required: true %><br /><br />
 
 
 			  <%= f.submit %>
